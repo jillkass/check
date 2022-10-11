@@ -28,14 +28,12 @@ jobs:
           ref=$(echo ${{ github.ref }} | sed -E -n -e 's/^refs\/[^/]*\/(.*)$/\1/p')
           git checkout $ref
         shell: bash
-      
       - name: checkout
         uses: ./.github/checkout
-      
       - name: build
         id: build
-        run: |
-          echo "::set-output name=heroku-build_id::$HEROKU-BUILD_ID"
+        #run: |
+          #echo "::set-output name=heroku-build_id::$HEROKU-BUILD_ID"
       
       - name: push
         # uses: ./.github/heroku-build
@@ -43,8 +41,9 @@ jobs:
           # app-name: "${{secrets.APP}}"
           # api-key: "${{secrets.KEY}}"
         run: |
-          echo "👊👊👊👊👊👊action begin👊👊👊👊👊👊"
+          #echo "👊👊👊👊👊👊action begin👊👊👊👊👊👊"
           TZ='Asia/Shanghai'; export TZ
+          echo "::set-output name=heroku-build_id::$HEROKU-BUILD_ID"
   
   heroku-deploy:
     needs: heroku-build 

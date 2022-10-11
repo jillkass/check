@@ -1,2 +1,2 @@
 # check
-[check](https://github.com/github/jillkass/check/workflows/check.yml/badge.svg)
+![check](https://github.com/jillkass/check/workflows/check/badge.svg)

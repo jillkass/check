@@ -41,8 +41,7 @@ jobs:
           # app-name: "${{secrets.APP}}"
           # api-key: "${{secrets.KEY}}"
         run: |
-          #echo "👊👊👊👊👊👊action begin👊👊👊👊👊👊"
-          TZ='Asia/Shanghai'; export TZ
+          git version
           echo "::set-output name=heroku-build_id::$HEROKU-BUILD_ID"
   
   heroku-deploy:
